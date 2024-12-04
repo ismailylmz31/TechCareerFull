@@ -33,7 +33,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     
     private IEnumerable<User> GetSeeds()
     {
-        List<User> users = new List<User>();
+        List<User> Users = new List<User>();
 
         HashingHelper.CreatePasswordHash(
             password: "Passw0rd",
@@ -51,8 +51,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
             };
-        users.Add(adminUser);
+        Users.Add(adminUser);
 
-        return users.ToArray();
+        return Users.ToArray();
     }
 }
