@@ -25,12 +25,12 @@ public class UserOperationClaimConfiguration : IEntityTypeConfiguration<UserOper
         builder.Navigation(x => x.OperationClaim).AutoInclude();
         builder.Navigation(x => x.User).AutoInclude();
         
-        builder.HasData(getSeeds());
+        builder.HasData(GetSeeds());
         
         
     }
 
-    private IEnumerable<UserOperationClaim> getSeeds()
+    private IEnumerable<UserOperationClaim> GetSeeds()
     {
         List<UserOperationClaim> userOperationClaims = new();
 
