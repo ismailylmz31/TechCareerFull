@@ -8,7 +8,7 @@ public class InstructorConfiguration : IEntityTypeConfiguration<Instructor>
     {
         builder.ToTable("Instructors").HasKey(i => i.Id);
 
-        builder.Property(i => i.Id).HasColumnName("InstructorId").IsRequired();
+        builder.Property(i => i.Id).HasColumnName("Id").IsRequired();
         builder.Property(i => i.Name).HasColumnName("Name").IsRequired().HasMaxLength(100);
         builder.Property(i => i.About).HasColumnName("About").IsRequired().HasMaxLength(500);
         builder.Property(i => i.CreatedDate).HasColumnName("CreatedDate").IsRequired();
@@ -16,5 +16,10 @@ public class InstructorConfiguration : IEntityTypeConfiguration<Instructor>
         builder.Property(i => i.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(i => !i.DeletedDate.HasValue);
+
+        builder.HasMany(i => i.VideoEducations)
+               .WithOne(v => v.Instructor)
+               .HasForeignKey(v => v.InstructorId)
+               .OnDelete(DeleteBehavior.Cascade);
     }
 }
