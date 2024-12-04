@@ -7,7 +7,7 @@ using TechCareer.Service.Abstracts;
 namespace TechCareer.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/event/[controller]")]
     public class EventController(IEventService _eventService) : ControllerBase
     {
 

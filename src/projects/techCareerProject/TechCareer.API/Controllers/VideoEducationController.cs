@@ -10,7 +10,7 @@ using TechCareer.Service.Concretes;
 
 namespace TechCareer.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/video/[controller]")]
     [ApiController]
     public class VideoEducationController : ControllerBase
     {

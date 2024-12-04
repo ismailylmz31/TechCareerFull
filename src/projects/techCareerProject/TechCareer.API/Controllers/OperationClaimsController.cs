@@ -5,7 +5,7 @@ using TechCareer.Service.Abstracts;
 namespace TechCareer.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/opertaion/[controller]")]
 public class OperationClaimsController(IOperationClaimService operationClaimService) : Controller
 {
 

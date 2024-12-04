@@ -8,7 +8,7 @@ using TechCareer.Service.Abstracts;
 
 namespace TechCareer.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/user/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
 {
