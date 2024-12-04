@@ -6,7 +6,7 @@ using TechCareer.Service.Abstracts;
 namespace TechCareer.API.Controllers
 {
     [ApiController]
-    [Route("api/instructor/[controller]")]
+    [Route("api/[controller]")]
     public class InstructorController : ControllerBase
     {
         private readonly IInstructorService _instructorService;

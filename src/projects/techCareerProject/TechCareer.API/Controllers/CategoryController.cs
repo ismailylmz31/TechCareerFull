@@ -7,7 +7,7 @@ using TechCareer.Service.Abstracts;
 namespace TechCareer.API.Controllers
 {
     [ApiController]
-    [Route("api/category/[controller]")]
+    [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryService _categoryService;

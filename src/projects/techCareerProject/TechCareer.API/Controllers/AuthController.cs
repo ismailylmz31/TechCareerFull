@@ -4,7 +4,7 @@ using TechCareer.Service.Abstracts;
 
 namespace TechCareer.API.Controllers;
 
-[Route("api/auth/[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class AuthController(IAuthService _authService) : ControllerBase
 {
