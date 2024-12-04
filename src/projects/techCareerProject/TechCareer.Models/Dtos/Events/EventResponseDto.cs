@@ -8,7 +8,7 @@ namespace TechCareer.Models.Dtos.Events
 {
     public sealed record EventResponseDto
     {
-        public Guid id { get; init; }
+        public Guid Id { get; init; }
         public string Title { get; init; }
         public string Description { get; init; }
         public string ImageUrl { get; init; }

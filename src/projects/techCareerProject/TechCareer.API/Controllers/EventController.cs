@@ -52,7 +52,7 @@ namespace TechCareer.API.Controllers
         public async Task<IActionResult> Add([FromBody] CreateEventRequestDto dto)
         {
             var createdEvent = await _eventService.AddAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = createdEvent.id }, createdEvent);
+            return CreatedAtAction(nameof(GetById), new { id = createdEvent.Id }, createdEvent);
         }
 
         // Event Güncelleme

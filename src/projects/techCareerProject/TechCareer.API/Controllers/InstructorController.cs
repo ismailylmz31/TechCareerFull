@@ -47,7 +47,7 @@ namespace TechCareer.API.Controllers
                 return BadRequest(ModelState);
 
             var instructor = await _instructorService.AddAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = instructor.id }, instructor);
+            return CreatedAtAction(nameof(GetById), new { id = instructor.Id }, instructor);
         }
 
         // Instructor Güncelleme
