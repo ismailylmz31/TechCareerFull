@@ -19,29 +19,17 @@ namespace TechCareer.API.Controllers
 
         // Tüm Kategorileri Listeleme
         [HttpGet]
-        public async Task<IActionResult> GetAll(
-            [FromQuery] Expression<Func<Category, bool>>? filter = null,
-            [FromQuery] Func<IQueryable<Category>, IOrderedQueryable<Category>>? orderBy = null,
-            [FromQuery] bool include = false,
-            [FromQuery] bool withDeleted = false,
-            [FromQuery] bool enableTracking = true)
+        public async Task<IActionResult> GetAll()
         {
-            var categories = await _categoryService.GetListAsync(filter, orderBy, include, withDeleted, enableTracking);
+            var categories = await _categoryService.GetListAsync();
             return Ok(categories);
         }
 
         // Sayfalama ile Listeleme
         [HttpGet("paginate")]
-        public async Task<IActionResult> GetPaginated(
-            [FromQuery] int index = 0,
-            [FromQuery] int size = 10,
-            [FromQuery] Expression<Func<Category, bool>>? filter = null,
-            [FromQuery] Func<IQueryable<Category>, IOrderedQueryable<Category>>? orderBy = null,
-            [FromQuery] bool include = true,
-            [FromQuery] bool withDeleted = false,
-            [FromQuery] bool enableTracking = true)
+        public async Task<IActionResult> GetPaginated()
         {
-            var paginatedCategories = await _categoryService.GetPaginateAsync(filter, orderBy, include, index, size, withDeleted, enableTracking);
+            var paginatedCategories = await _categoryService.GetPaginateAsync();
             return Ok(paginatedCategories);
         }
 

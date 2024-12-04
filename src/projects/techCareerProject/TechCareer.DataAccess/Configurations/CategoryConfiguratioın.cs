@@ -2,27 +2,22 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TechCareer.Models.Entities;
 
-
-namespace TechCareer.DataAccess.Configurations
+public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 {
-    public class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    public void Configure(EntityTypeBuilder<Category> builder)
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
-        {
-            builder.ToTable("Categories").HasKey(c => c.Id);
+        // Primary key tanımı
+        builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.Id)
-                .HasColumnName("CategoryId")
-                .IsRequired();
+        // Name alanı için özellikler
+        builder.Property(c => c.Name)
+               .IsRequired()
+               .HasMaxLength(100);
 
-            builder.Property(c => c.Name)
-                .HasColumnName("Name")
-                .IsRequired()
-                .HasMaxLength(100); // Gerekirse uzunluk sınırı belirtebilirsiniz.
-
-            // Navigation Property'yi AutoInclude kaldırılıyor veya Events'e yönlendiriliyor
-            // builder.Navigation(c => c.Event).AutoInclude(); // Hatalı
-        }
-
+        // Bir kategori birden fazla event'e sahip olabilir
+        builder.HasMany(c => c.Events)
+               .WithOne(e => e.Category)
+               .HasForeignKey(e => e.CategoryId)
+               .OnDelete(DeleteBehavior.Cascade); // Cascade delete davranışı
     }
 }
