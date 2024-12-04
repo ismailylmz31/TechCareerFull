@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TechCareer.Models.Dtos.Category
 {
-    public sealed record CategoryResponseDto(int Id, string name)
+    public sealed class CategoryResponseDto
     {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        
     }
+
 }

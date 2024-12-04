@@ -1,3 +1,7 @@
 ﻿namespace TechCareer.Models.Dtos.Instructors;
 
-public sealed record CreateInstructorRequestDto(string Name, string About);
+public sealed class CreateInstructorRequestDto
+{
+    public string? Name { get; set; }
+    public string? About { get; set; }
+}

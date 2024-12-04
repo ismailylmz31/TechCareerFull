@@ -2,5 +2,5 @@
 
 public sealed class OperationClaimAddRequestDto
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }

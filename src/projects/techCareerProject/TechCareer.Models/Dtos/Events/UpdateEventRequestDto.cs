@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TechCareer.Models.Dtos.Events
 {
-    public sealed record UpdateEventRequestDto(
-        Guid Id,
-        string Title,
-        string Description,
-        string ImageUrl,
-        string ParticipationText)
+    public sealed class UpdateEventRequestDto
     {
+        public Guid Id { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? ImageUrl { get; set; }
+        public string? ParticipationText { get; set; }
     }
 }

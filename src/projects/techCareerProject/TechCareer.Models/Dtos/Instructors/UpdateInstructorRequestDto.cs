@@ -1,4 +1,11 @@
 ﻿namespace TechCareer.Models.Dtos.Instructors;
 
-public sealed record UpdateInstructorRequestDto(Guid Id, string Name, string About);
+public sealed class UpdateInstructorRequestDto
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public string About { get; set; }
+
+}
+
 
