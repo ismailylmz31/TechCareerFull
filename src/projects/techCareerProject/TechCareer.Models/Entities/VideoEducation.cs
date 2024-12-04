@@ -18,4 +18,7 @@ public class VideoEducation : Entity<int>
 
     public Instructor Instructor { get; set; }
     public string ProgrammingLanguage { get; set; }
+
+    
+
 }

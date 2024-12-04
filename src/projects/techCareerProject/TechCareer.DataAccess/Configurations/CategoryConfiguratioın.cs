@@ -20,7 +20,9 @@ namespace TechCareer.DataAccess.Configurations
                 .IsRequired()
                 .HasMaxLength(100); // Gerekirse uzunluk sınırı belirtebilirsiniz.
 
-            builder.Navigation(c => c.Event).AutoInclude(); // Otomatik yükleme.
+            // Navigation Property'yi AutoInclude kaldırılıyor veya Events'e yönlendiriliyor
+            // builder.Navigation(c => c.Event).AutoInclude(); // Hatalı
         }
+
     }
 }
