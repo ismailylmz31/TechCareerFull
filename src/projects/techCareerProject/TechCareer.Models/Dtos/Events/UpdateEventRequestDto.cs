@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechCareer.Models.Dtos.Events
 {
-    public sealed class UpdateEventRequestDto
+    public class UpdateEventRequestDto
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }

@@ -8,7 +8,7 @@ namespace TechCareer.Models.Dtos.Events;
 
 
 
-public sealed class CreateEventRequestDto
+public class CreateEventRequestDto
 {
     public string? Title { get; set; }
     public string? Description { get; set; }

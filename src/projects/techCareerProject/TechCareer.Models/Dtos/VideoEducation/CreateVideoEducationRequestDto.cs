@@ -3,7 +3,7 @@ using TechCareer.Models.Entities.Enum;
 
 namespace TechCareer.Models.Dtos.VideoEducation;
 
-public sealed class CreateVideoEducationRequestDto
+public class CreateVideoEducationRequestDto
 {
     public string? Title { get; set; }
     public string? Description { get; set; }

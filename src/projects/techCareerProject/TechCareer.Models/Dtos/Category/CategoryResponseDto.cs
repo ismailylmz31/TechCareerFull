@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechCareer.Models.Dtos.Category
 {
-    public sealed class CategoryResponseDto
+    public class CategoryResponseDto
     {
         public int Id { get; set; }
         public string? Name { get; set; }

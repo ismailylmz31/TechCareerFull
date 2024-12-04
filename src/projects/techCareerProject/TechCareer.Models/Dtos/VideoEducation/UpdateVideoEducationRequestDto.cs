@@ -2,7 +2,7 @@
 
 namespace TechCareer.Models.Dtos.VideoEducation;
 
-public sealed class UpdateVideoEducationRequestDto
+public class UpdateVideoEducationRequestDto
 {
     public int Id { get; set; }
     public string? Title { get; set; }
